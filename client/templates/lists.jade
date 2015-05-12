@@ -1,10 +1,25 @@
 template(name='ListsIndex')
-
+  +contentFor('headerTitle')
+    h1.title Lists
+  +ionView
+    +ionContent
+      +ionList
+        each lists
+          +ionItem(buttonRight=true)
+            a(href="{{pathFor 'ListsShow' _id=_id}}")
+              h2= name
+      
 template(name='ListsShow')
-  +ionList
-    +ListsCreateItem
-    each listItems
-      +ListItem
+  +contentFor('headerButtonLeft')
+    +ionNavBackButton(path="ListsIndex")
+  +contentFor('headerTitle')
+    h1.title= list.name
+  +ionView
+    +ionContent
+      +ionList
+        +ListsCreateItem
+        each listItems
+          +ListItem
               
 template(name='ListItem')
   +ionItem(buttonRight=true)

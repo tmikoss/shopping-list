@@ -6,7 +6,6 @@ body
 
 template(name='Layout')
   +ionBody
-    +ionTabs(style="ios" class="tabs-positive tabs-icon-top")
-      each lists
-        +ionTab(title=name path='ListsShow' _id=_id iconOn='ios-list-outline' iconOff='ios-list-outline')
-    +yield
+    +ionNavBar(class="bar-positive")
+    +ionNavView
+      +yield
