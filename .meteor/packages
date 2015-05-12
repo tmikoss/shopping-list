@@ -9,4 +9,6 @@ insecure
 coffeescript
 mquandalle:jade
 iron:router
-twbs:bootstrap
+meteoric:ionic
+meteoric:ionic-sass
+meteoric:ionicons-sass

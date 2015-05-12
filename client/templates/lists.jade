@@ -1,0 +1,23 @@
+template(name='ListsIndex')
+
+template(name='ListsShow')
+  +ionList
+    +ListsCreateItem
+    each listItems
+      +ListItem
+              
+template(name='ListItem')
+  +ionItem(buttonRight=true)
+    h2= name
+    if done
+      button.button(data-action='mark-as-not-done')
+        +ionIcon(icon='checkmark')
+    else
+      button.button.button-positive(data-action='mark-as-done')
+        +ionIcon(icon='checkmark')
+                
+template(name='ListsCreateItem')
+  +ionItem(buttonRight=true class='lists-create')
+    input(type='text' placeholder='New item')
+    button.button.button-positive
+      +ionIcon(icon='plus')

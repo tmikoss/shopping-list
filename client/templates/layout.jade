@@ -5,5 +5,8 @@ head
 body
 
 template(name='Layout')
-  .container
+  +ionBody
+    +ionTabs(style="ios" class="tabs-positive tabs-icon-top")
+      each lists
+        +ionTab(title=name path='ListsShow' _id=_id iconOn='ios-list-outline' iconOff='ios-list-outline')
     +yield
