@@ -18,7 +18,7 @@ Router.map ->
   @route 'ListShow',
     path: '/:_id'
     template: 'ListShow'
-    waitOn: -> Meteor.subscribe 'list_items'
+    waitOn: -> Meteor.subscribe 'list_items', @params._id
     data: ->
       list: SL.Lists.findOne @params._id
       listItems: SL.ListItems.find { listId: @params._id }, { sort: { done: 1, updatedAt: -1 } }
