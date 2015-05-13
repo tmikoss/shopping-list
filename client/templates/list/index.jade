@@ -1,0 +1,13 @@
+template(name='ListIndex')
+  +contentFor('headerTitle')
+    h1.title Lists
+  +contentFor('headerButtonRight')
+    a.button.button-clear(href="{{pathFor 'ListCreate'}}")
+      +ionIcon(icon='plus')
+  +ionView
+    +ionContent
+      +ionList
+        each lists
+          +ionItem(buttonRight=true)
+            a(href="{{pathFor 'ListShow' _id=_id}}")
+              h2= name

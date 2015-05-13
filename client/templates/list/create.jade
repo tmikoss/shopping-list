@@ -1,0 +1,16 @@
+template(name='ListCreate')
+  +contentFor('headerButtonLeft')
+    +ionNavBackButton(path="ListIndex")
+  +contentFor('headerTitle')
+    h1.title New list
+  +ionView
+    +ionContent
+      form
+        label.item.item-input.item-stacked-label(type='stacked')
+          span.input-label Name
+          input(type='text' label-type='stacked' name='name')
+    
+        .padding
+          button.button.button-positive.button-block(type='submit')
+            | Save
+        

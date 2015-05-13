@@ -1,4 +1,4 @@
-Template.ListsCreateItem.events
+Template.ListShowCreateItem.events
   'click button': (e, tmpl) ->
     nameField = tmpl.$('input')
     name = nameField.val()
@@ -14,14 +14,14 @@ Template.ListsCreateItem.events
 
     false
 
-Template.ListItem.events
+Template.ListShowItem.events
   "click [data-action='mark-as-done']": ->
     SL.ListItems.update @_id, $set: { done: true, updatedAt: new Date }
 
   "click [data-action='mark-as-not-done']": ->
     SL.ListItems.update @_id, $set: { done: false, updatedAt: new Date }
 
-Template.ListItem.onRendered ->
+Template.ListShowItem.onRendered ->
   @autorun =>
     data = Template.currentData()
 

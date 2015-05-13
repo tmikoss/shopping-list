@@ -1,27 +1,19 @@
-template(name='ListsIndex')
-  +contentFor('headerTitle')
-    h1.title Lists
-  +ionView
-    +ionContent
-      +ionList
-        each lists
-          +ionItem(buttonRight=true)
-            a(href="{{pathFor 'ListsShow' _id=_id}}")
-              h2= name
-      
-template(name='ListsShow')
+template(name='ListShow')
   +contentFor('headerButtonLeft')
-    +ionNavBackButton(path="ListsIndex")
+    +ionNavBackButton(path="ListIndex")
   +contentFor('headerTitle')
     h1.title= list.name
+  +contentFor('headerButtonRight')
+    a.button.button-clear(href="{{pathFor 'ListUpdate' _id=list._id}}")
+      +ionIcon(icon='edit')
   +ionView
     +ionContent
       +ionList
-        +ListsCreateItem
+        +ListShowCreateItem
         each listItems
-          +ListItem
+          +ListShowItem
               
-template(name='ListItem')
+template(name='ListShowItem')
   +ionItem(buttonRight=true)
     h2= name
     if done
@@ -31,7 +23,7 @@ template(name='ListItem')
       button.button.button-positive(data-action='mark-as-done')
         +ionIcon(icon='checkmark')
                 
-template(name='ListsCreateItem')
+template(name='ListShowCreateItem')
   +ionItem(buttonRight=true class='lists-create')
     input(type='text' placeholder='New item')
     button.button.button-positive

@@ -1,0 +1,20 @@
+template(name='ListUpdate')
+  +contentFor('headerButtonLeft')
+    +ionNavBackButton(path="ListShow" _id=list._id)
+  +contentFor('headerTitle')
+    h1.title= list.name
+  +ionView
+    +ionContent
+      form
+        label.item.item-input.item-stacked-label(type='stacked')
+          span.input-label Name
+          input(type='text' label-type='stacked' name='name' value=list.name)
+    
+        .padding
+          button.button.button-positive.button-block(type='submit')
+            | Update
+        
+      .padding
+        button.button.button-assertive.button-block(type='button' data-action='delete')
+          | Delete
+      
