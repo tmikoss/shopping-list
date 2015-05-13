@@ -24,7 +24,8 @@ template(name='ListShowItem')
         +ionIcon(icon='checkmark')
                 
 template(name='ListShowCreateItem')
-  +ionItem(buttonRight=true class='lists-create')
-    input(type='text' placeholder='New item')
-    button.button.button-positive
-      +ionIcon(icon='plus')
+  form
+    +ionItem(buttonRight=true class='lists-create')
+      input(type='text' placeholder='New item' name='name')
+      button.button.button-positive
+        +ionIcon(icon='plus')

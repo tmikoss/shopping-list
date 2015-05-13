@@ -1,7 +1,7 @@
 Template.ListShowCreateItem.events
-  'click button': (e, tmpl) ->
-    nameField = tmpl.$('input')
-    name = nameField.val()
+  'submit form': (e) ->
+    form = e.target
+    name = form.name.value
 
     if name
       SL.ListItems.insert
@@ -10,7 +10,7 @@ Template.ListShowCreateItem.events
         done: false
         updatedAt: new Date
 
-      nameField.val('')
+      form.name.value = ''
 
     false
 
