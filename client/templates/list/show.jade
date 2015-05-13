@@ -8,7 +8,7 @@ template(name='ListShow')
       +ionIcon(icon='edit')
   +ionView
     +ionContent
-      +ionList
+      +ionList(class='list-items')
         +ListShowCreateItem
         each listItems
           +ListShowItem
@@ -25,7 +25,7 @@ template(name='ListShowItem')
                 
 template(name='ListShowCreateItem')
   form
-    +ionItem(buttonRight=true class='lists-create')
+    +ionItem(buttonRight=true)
       input(type='text' placeholder='New item' name='name')
       button.button.button-positive
         +ionIcon(icon='plus')

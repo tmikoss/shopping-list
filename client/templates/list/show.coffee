@@ -25,6 +25,25 @@ Template.ListShowItem.onRendered ->
   @autorun =>
     data = Template.currentData()
 
-    @$('.item').hammer().off('swipe').on 'swipe', ->
+    @$('.item').hammer().off('swipeleft').on 'swipeleft', ->
       if data.done
         SL.ListItems.remove data._id
+
+
+Template.ListShow.onRendered ->
+  @find('.list-items')._uihooks =
+    insertElement: (node, next) ->
+      $node = $ node
+      $node.css top: '-80px', opacity: 0
+      $node.insertBefore next
+      $node.addClass 'animate'
+      $node.css 'top' # Force reflow
+      $node.css top: 0, opacity: 1
+
+    removeElement: (node) ->
+      $node = $ node
+      $node.css right: 0, opacity: 1
+      $node.addClass 'animate'
+      $node.css 'top' # Force reflow
+      $node.css right: '100%', opacity: 0
+      $node.on 'transitionend', -> $(this).remove()
