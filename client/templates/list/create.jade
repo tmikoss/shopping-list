@@ -1,6 +1,7 @@
 template(name='ListCreate')
   +contentFor('headerButtonLeft')
-    +ionNavBackButton(path="ListIndex")
+    button.button.button-clear.pull-left(data-ion-menu-toggle='left')
+      +ionIcon(icon='navicon')
   +contentFor('headerTitle')
     h1.title New list
   +ionView

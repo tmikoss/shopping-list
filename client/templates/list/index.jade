@@ -1,13 +1,8 @@
 template(name='ListIndex')
+  +contentFor('headerButtonLeft')
+    button.button.button-clear.pull-left(data-ion-menu-toggle='left')
+      +ionIcon(icon='navicon')
   +contentFor('headerTitle')
-    h1.title Lists
-  +contentFor('headerButtonRight')
-    a.button.button-clear(href="{{pathFor 'ListCreate'}}")
-      +ionIcon(icon='plus')
+    h1.title All items
   +ionView
     +ionContent
-      +ionList
-        each lists
-          +ionItem(buttonRight=true)
-            a(href="{{pathFor 'ListShow' _id=_id}}")
-              h2= name

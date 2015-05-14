@@ -20,3 +20,21 @@
 .animate {
   transition: all 300ms 0ms ease-out;
 }
+
+.sidebar {
+  &--current-user {
+    padding-top: 12px;
+    padding-bottom: 11px;
+
+    .button {
+      top: 5px;
+      color: white;
+    }
+  }
+
+  &--add-list {
+    i {
+      color: white;
+    }
+  }
+}
