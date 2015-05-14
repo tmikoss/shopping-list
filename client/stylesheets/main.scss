@@ -25,16 +25,13 @@
   &--current-user {
     padding-top: 12px;
     padding-bottom: 11px;
-
-    .button {
-      top: 5px;
-      color: white;
-    }
   }
 
-  &--add-list {
-    i {
-      color: white;
-    }
+  i {
+    color: white;
+  }
+
+  .badge {
+    right: 16px;
   }
 }

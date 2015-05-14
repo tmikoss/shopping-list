@@ -1,16 +1,31 @@
 template(name='SidebarShow')
-  .list
-    .item.item-dark.item-button-right.sidebar--current-user
+  .list.sidebar
+    .item.item-dark.item-icon-right.sidebar--current-user
       if currentUser
         = currentUser.profile.name
-        a.button.button-clear(data-ion-menu-close href="{{pathFor 'Logout'}}")
+        a(data-ion-menu-close href="{{pathFor 'Logout'}}")
           +ionIcon(icon='log-out')
-    a.item(data-ion-menu-close href="{{pathFor 'ListIndex'}}" class="{{selectedClass 'all'}}")
-      | All items
+          
+    +SidebarAllItems
+      
     each lists      
-      a.item(data-ion-menu-close href="{{pathFor 'ListShow' _id=_id}}" class="{{selectedClass _id}}")
-        = name
-    a.item.item-button-right.sidebar--add-list(data-ion-menu-close href="{{pathFor 'ListCreate'}}" class="{{selectedClass 'new' 'item-dark'}}")
-      | New list
-      .button.button-clear
-        +ionIcon(icon='plus')
+      +SidebarList
+          
+    +SidebarNewList
+
+template(name='SidebarAllItems')
+  a.item(data-ion-menu-close href="{{pathFor 'ListIndex'}}" class=selectedClass)
+    | All items
+    span.badge.badge-assertive
+      = badgeCount
+
+template(name='SidebarList')
+  a.item(data-ion-menu-close href="{{pathFor 'ListShow' _id=_id}}" class=selectedClass)
+    = name
+    span.badge.badge-assertive
+      = badgeCount
+
+template(name='SidebarNewList')
+  a.item.item-icon-right.sidebar--add-list(data-ion-menu-close href="{{pathFor 'ListCreate'}}" class=selectedClass)
+    | New list
+    +ionIcon(icon='plus')
