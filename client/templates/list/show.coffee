@@ -29,7 +29,6 @@ Template.ListShowItem.onRendered ->
       if data.done
         SL.ListItems.remove data._id
 
-
 Template.ListShow.onRendered ->
   @find('.list-items')._uihooks =
     insertElement: (node, next) ->

@@ -11,6 +11,7 @@ Router.map ->
       @next()
     data: ->
       lists: SL.Lists.find {}
+      listItems: SL.ListItems.find {}, { sort: { done: 1, updatedAt: -1 } }
 
   @route 'ListCreate',
     path: '/lists/new'
@@ -27,7 +28,6 @@ Router.map ->
     onBeforeAction: ->
       Session.set 'sidebar.selected', @params._id
       @next()
-    waitOn: -> Meteor.subscribe 'list_items', @params._id
     data: ->
       list: SL.Lists.findOne @params._id
       listItems: SL.ListItems.find { listId: @params._id }, { sort: { done: 1, updatedAt: -1 } }

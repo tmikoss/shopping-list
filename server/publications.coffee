@@ -1,3 +1,5 @@
-Meteor.publish 'lists', -> SL.Lists.find { userId: @userId }
-
-Meteor.publish 'list_items', (listId)-> SL.ListItems.find { listId: listId }
+Meteor.publishComposite 'lists',
+  find: -> SL.Lists.find { userId: @userId }
+  children: [
+    find: (list) -> SL.ListItems.find { listId: list._id }
+  ]
