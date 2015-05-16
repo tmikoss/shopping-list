@@ -9,5 +9,10 @@ SL.Lists.attachSchema new SimpleSchema
     autoform:
       omit: true
     autoValue: -> if @isInsert then @userId else @unset()
+  sharedEmails:
+    type: [String]
+    label: 'Shared with'
+    optional: true
+    regEx: SimpleSchema.RegEx.Email
 
 SL.ListItems = new Mongo.Collection 'list_items'
