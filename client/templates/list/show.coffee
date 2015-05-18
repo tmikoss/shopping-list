@@ -18,16 +18,16 @@ Template.ListShow.onRendered ->
   @find('.list-items')._uihooks =
     insertElement: (node, next) ->
       $node = $ node
-      $node.css top: '-80px', opacity: 0
+      $node.css top: '-80px'
       $node.insertBefore next
       $node.addClass 'animate'
       $node.css 'top' # Force reflow
-      $node.css top: 0, opacity: 1
+      $node.css top: 0
 
     removeElement: (node) ->
       $node = $ node
-      $node.css right: 0, opacity: 1
+      $node.css right: 0
       $node.addClass 'animate'
       $node.css 'top' # Force reflow
-      $node.css right: '100%', opacity: 0
+      $node.css right: '100%'
       $node.on 'transitionend', -> $(this).remove()
