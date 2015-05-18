@@ -1,6 +1,5 @@
 Ground.Collection SL.Lists
 Ground.Collection SL.ListItems
-Ground.Collection Meteor.users
 
 subscribed = false
 Tracker.autorun ->
