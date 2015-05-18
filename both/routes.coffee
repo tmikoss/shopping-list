@@ -50,4 +50,4 @@ Router.onBeforeAction ->
   if Meteor.userId()
     @next()
   else
-    @render 'LoginShow'
+    @render 'LoginShow', layoutTemplate: 'LayoutBlank'

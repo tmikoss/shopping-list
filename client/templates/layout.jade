@@ -7,11 +7,17 @@ body
 
 template(name='Layout')
   +ionBody
-    +ionSideMenuContainer(side='left')
-      +ionSideMenus
-        +ionSideMenu
-          +SidebarShow
-      +ionSideMenuContent
-        +ionNavBar(class="bar-positive")
-        +ionNavView
-          +yield
+    if currentUser
+      +ionSideMenuContainer(side='left')
+        +ionSideMenus
+          +ionSideMenu
+            +SidebarShow
+        +ionSideMenuContent
+          +LayoutContent
+    else
+      +LayoutContent
+
+template(name='LayoutContent')
+  +ionNavBar(class="bar-positive")
+  +ionNavView
+    +yield

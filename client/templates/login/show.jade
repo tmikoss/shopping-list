@@ -3,4 +3,6 @@ template(name='LoginShow')
     h1.title Log in
   +ionView
     +ionContent
-      +loginButtons
+      .padding
+        a.button.button-positive.button-block(data-action='log-in')
+          | Click to log in with Google
