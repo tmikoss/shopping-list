@@ -4,9 +4,10 @@ template(name='ListShow')
       +ionIcon(icon='navicon')
   +contentFor('headerTitle')
     h1.title= list.name
-  +contentFor('headerButtonRight')
-    a.button.button-clear(href="{{pathFor 'ListUpdate' _id=list._id}}")
-      +ionIcon(icon='edit')
+  if ownedByCurrentUser
+    +contentFor('headerButtonRight')
+      a.button.button-clear(href="{{pathFor 'ListUpdate' _id=list._id}}")
+        +ionIcon(icon='edit')
   +ionView
     +ionContent
       +ionList(class='list-items')

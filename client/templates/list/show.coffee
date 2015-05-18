@@ -31,3 +31,6 @@ Template.ListShow.onRendered ->
       $node.css 'top' # Force reflow
       $node.css right: '100%'
       $node.on 'transitionend', -> $(this).remove()
+
+Template.ListShow.helpers
+  ownedByCurrentUser: -> @list.userId is Meteor.userId()
