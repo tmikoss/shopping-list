@@ -40,3 +40,13 @@
     right: 16px;
   }
 }
+
+.list-item {
+  &__done {
+    opacity: 0.5;
+
+    h2 {
+      text-decoration: line-through;
+    }
+  }
+}

@@ -15,3 +15,4 @@ Template.ListItemShow.onRendered ->
 
 Template.ListItemShow.helpers
   listName: -> SL.Lists.findOne(@listId)?.name
+  itemClass: -> if @done then 'list-item__done' else 'list-item'
