@@ -12,3 +12,6 @@ Template.ListItemShow.onRendered ->
     @$('.item').hammer().off('swipeleft').on 'swipeleft', ->
       if data.done
         SL.ListItems.remove data._id
+
+Template.ListItemShow.helpers
+  listName: -> SL.Lists.findOne(@listId)?.name

@@ -14,6 +14,11 @@
   div.item {
     position: relative;
     z-index: 50;
+
+    // Hide list name in single list view
+    p {
+      display: none;
+    }
   }
 }
 
