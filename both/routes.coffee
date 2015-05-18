@@ -1,6 +1,5 @@
 Router.configure
   layoutTemplate: 'Layout'
-  waitOn: -> Meteor.subscribe 'lists'
 
 Router.map ->
   @route 'ListIndex',
