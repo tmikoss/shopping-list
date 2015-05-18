@@ -1,0 +1,12 @@
+template(name='ListItemShow')
+  +ionItem(buttonRight=true)
+    h2= name
+    +ListItemShowButtons
+    
+template(name='ListItemShowButtons')
+  if done
+    button.button(data-action='mark-as-not-done')
+      +ionIcon(icon='checkmark')
+  else
+    button.button.button-positive(data-action='mark-as-done')
+      +ionIcon(icon='checkmark')

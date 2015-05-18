@@ -12,17 +12,7 @@ template(name='ListShow')
       +ionList(class='list-items')
         +ListShowCreateItem
         each listItems
-          +ListShowItem
-              
-template(name='ListShowItem')
-  +ionItem(buttonRight=true)
-    h2= name
-    if done
-      button.button(data-action='mark-as-not-done')
-        +ionIcon(icon='checkmark')
-    else
-      button.button.button-positive(data-action='mark-as-done')
-        +ionIcon(icon='checkmark')
+          +ListItemShow
                 
 template(name='ListShowCreateItem')
   form
