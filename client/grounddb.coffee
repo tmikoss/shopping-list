@@ -1,5 +1,6 @@
-Ground.Collection SL.Lists
-Ground.Collection SL.ListItems
+Meteor.startup ->
+  Ground.Collection SL.Lists
+  Ground.Collection SL.ListItems
 
 subscribed = false
 Tracker.autorun ->

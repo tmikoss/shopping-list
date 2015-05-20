@@ -1,9 +1,9 @@
 Template.ListItemShowButtons.events
   "click [data-action='mark-as-done']": ->
-    SL.ListItems.update @_id, $set: { done: true, updatedAt: new Date }
+    SL.ListItems.update @_id, $set: { done: true, updatedAt: new Date, doneAt: new Date }
 
   "click [data-action='mark-as-not-done']": ->
-    SL.ListItems.update @_id, $set: { done: false, updatedAt: new Date }
+    SL.ListItems.update @_id, $set: { done: false, updatedAt: new Date, doneAt: null }
 
 Template.ListItemShow.onRendered ->
   @autorun =>

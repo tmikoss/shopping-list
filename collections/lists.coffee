@@ -14,5 +14,3 @@ SL.Lists.attachSchema new SimpleSchema
     label: 'Shared with'
     optional: true
     regEx: SimpleSchema.RegEx.Email
-
-SL.ListItems = new Mongo.Collection 'list_items'
