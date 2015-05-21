@@ -6,7 +6,7 @@ template(name='ListItemShow')
     
 template(name='ListItemShowButtons')
   if done
-    button.button(data-action='mark-as-not-done')
+    button.button.button-clear(data-action='mark-as-not-done')
       +ionIcon(icon='checkmark')
   else
     button.button.button-positive(data-action='mark-as-done')
