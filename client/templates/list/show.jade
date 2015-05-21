@@ -3,7 +3,10 @@ template(name='ListShow')
     button.button.button-clear.pull-left(data-ion-menu-toggle='left')
       +ionIcon(icon='navicon')
   +contentFor('headerTitle')
-    h1.title= list.name
+    h1.title
+      = list.name
+      if shared
+        +ionIcon(icon='person-stalker')
   if ownedByCurrentUser
     +contentFor('headerButtonRight')
       a.button.button-clear(href="{{pathFor 'ListUpdate' _id=list._id}}")

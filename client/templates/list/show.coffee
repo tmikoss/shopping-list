@@ -34,3 +34,4 @@ Template.ListShow.onRendered ->
 
 Template.ListShow.helpers
   ownedByCurrentUser: -> @list.userId is Meteor.userId()
+  shared: -> @list.sharedEmails?.length > 0
