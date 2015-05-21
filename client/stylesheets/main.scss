@@ -50,3 +50,25 @@
     }
   }
 }
+
+.autoform-tags-field {
+  width: 65%;
+  max-width: calc( 100% - 200px);
+
+  .bootstrap-tagsinput {
+    border: none;
+    box-shadow: none;
+
+    .tag {
+      @extend .button.button-positive.button-outline;
+      border-width: 1px;
+      border-style: solid;
+      border-radius: 2px;
+      padding: 2px;
+    }
+
+    input {
+      padding-right: 0;
+    }
+  }
+}

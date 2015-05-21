@@ -12,5 +12,7 @@ SL.Lists.attachSchema new SimpleSchema
   sharedEmails:
     type: [String]
     label: 'Shared with'
+    autoform:
+      type: 'tags'
     optional: true
     regEx: SimpleSchema.RegEx.Email
