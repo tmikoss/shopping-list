@@ -51,24 +51,35 @@
   }
 }
 
-.autoform-tags-field {
-  width: 65%;
-  max-width: calc( 100% - 200px);
+@media (min-width: 570px) {
+  .autoform-tags-field {
+    width: 100%;
+    max-width: calc(100% - 200px);
+  }
+}
 
-  .bootstrap-tagsinput {
-    border: none;
-    box-shadow: none;
+@media (max-width: 570px)  {
+  .autoform-tags-field {
+    width: 65%;
+  }
+}
 
-    .tag {
-      @extend .button.button-positive.button-outline;
-      border-width: 1px;
-      border-style: solid;
-      border-radius: 2px;
-      padding: 2px;
-    }
+.bootstrap-tagsinput {
+  border: none;
+  box-shadow: none;
+  white-space: normal;
 
-    input {
-      padding-right: 0;
-    }
+  .tag {
+    @extend .button.button-positive.button-outline;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 2px;
+    padding: 2px;
+    display: inline-block;
+    margin-top: 2px;
+  }
+
+  input {
+    padding-right: 0;
   }
 }
