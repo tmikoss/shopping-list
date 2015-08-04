@@ -1,6 +1,7 @@
 {
   "sidebar": {
-    "shared": "Man piešķirtie saraksti"
+    "shared": "Man piešķirtie saraksti",
+    "myLists": "Mani saraksti"
   },
   "list": {
     "newList": "Jauns saraksts",

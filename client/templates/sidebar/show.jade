@@ -7,16 +7,19 @@ template(name='SidebarShow')
           +ionIcon(icon='log-out')
           
     +SidebarAllItems
-      
+    
+    if hasSharedLists
+      .item.item-dark.item-icon-right.sidebar--spacer
+        | {{_ 'sidebar.myLists' }}
     each myLists      
       +SidebarList
     
     if hasSharedLists
       .item.item-dark.item-icon-right.sidebar--spacer
         | {{_ 'sidebar.shared' }}
-      each sharedLists
-        +SidebarList
-            
+    each sharedLists
+      +SidebarList
+          
     +SidebarNewList
 
 template(name='SidebarAllItems')
