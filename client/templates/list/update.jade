@@ -1,13 +1,13 @@
 template(name='ListUpdate')
   +contentFor('headerButtonLeft')
-    +ionNavBackButton(path="ListShow" _id=list._id)
+    +ionNavBackButton(path="ListShow" _id=list._id text=backButtonName)
   +contentFor('headerTitle')
     h1.title= list.name
   +ionView
     +ionContent
-      +quickForm(collection='SL.Lists' type='update' id='list' doc=list)
+      +quickForm(collection='SL.Lists' type='update' id='list' doc=list buttonContent=saveButtonName)
         
       .padding
         button.button.button-assertive.button-block(type='button' data-action='delete')
-          | Delete
+          | {{_ 'list.delete' }}
       

@@ -1,0 +1,23 @@
+{
+  "sidebar": {
+    "shared": "Man piešķirtie saraksti"
+  },
+  "list": {
+    "newList": "Jauns saraksts",
+    "allItems": "Visi pirkumi",
+    "confirmDelete": {
+      "title": "Tiešām dzēst?",
+      "content": "Tiešām dzēst šo sarakstu?"
+    },
+    "delete": "Dzēst",
+    "name": "Nosaukums",
+    "sharedEmails": "Papildus pieeja (e-pasti)",
+    "newItem": "Jauns pirkums"
+  },
+  "login": {
+    "login": "Pieslēgties",
+    "loginWithGoogle": "Pieslēgties ar Google kontu"
+  },
+  "save": "Saglabāt",
+  "back": "Atpakaļ"
+}

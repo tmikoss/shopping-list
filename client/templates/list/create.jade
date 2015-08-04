@@ -3,7 +3,7 @@ template(name='ListCreate')
     button.button.button-clear.pull-left(data-ion-menu-toggle='left')
       +ionIcon(icon='navicon')
   +contentFor('headerTitle')
-    h1.title New list
+    h1.title {{_ 'list.newList' }}
   +ionView
     +ionContent
-      +quickForm(collection='SL.Lists' type='insert' id='list')
+      +quickForm(collection='SL.Lists' type='insert' id='list' buttonContent=saveButtonName)

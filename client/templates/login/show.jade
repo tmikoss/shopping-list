@@ -1,8 +1,8 @@
 template(name='LoginShow')
   +contentFor('headerTitle')
-    h1.title Log in
+    h1.title {{_ 'login.login' }}
   +ionView
     +ionContent
       .padding
         a.button.button-positive.button-block(data-action='log-in')
-          | Click to log in with Google
+          | {{_ 'login.loginWithGoogle' }}

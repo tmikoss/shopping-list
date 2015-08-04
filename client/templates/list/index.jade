@@ -3,7 +3,7 @@ template(name='ListIndex')
     button.button.button-clear.pull-left(data-ion-menu-toggle='left')
       +ionIcon(icon='navicon')
   +contentFor('headerTitle')
-    h1.title All items
+    h1.title {{_ 'list.allItems' }}
   +ionView
     +ionContent
       +ionList

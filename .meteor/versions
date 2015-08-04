@@ -13,6 +13,7 @@ blaze@2.1.2
 blaze-tools@1.0.3
 boilerplate-generator@1.0.3
 callback-hook@1.0.3
+cfs:http-methods@0.0.29
 check@1.0.5
 chriswessels:hammer@3.1.1
 coffeescript@1.0.6
@@ -56,6 +57,7 @@ meteoric:autoform-ionic@0.1.5
 meteoric:ionic@0.1.17
 meteoric:ionic-sass@0.1.9
 meteoric:ionicons-sass@0.1.6
+meteorspark:util@0.2.0
 minifiers@1.1.5
 minimongo@1.0.8
 mobile-status-bar@1.0.3
@@ -81,6 +83,7 @@ service-configuration@1.0.4
 session@1.1.0
 spacebars@1.0.6
 spacebars-compiler@1.0.6
+tap:i18n@1.5.1
 templating@1.1.1
 tracker@1.0.7
 ui@1.0.6

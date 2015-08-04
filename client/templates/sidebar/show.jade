@@ -13,7 +13,7 @@ template(name='SidebarShow')
     
     if hasSharedLists
       .item.item-dark.item-icon-right.sidebar--spacer
-        | Shared by others
+        | {{_ 'sidebar.shared' }}
       each sharedLists
         +SidebarList
             
@@ -21,7 +21,7 @@ template(name='SidebarShow')
 
 template(name='SidebarAllItems')
   a.item(data-ion-menu-close href="{{pathFor 'ListIndex'}}" class=selectedClass)
-    | All items
+    | {{_ 'list.allItems' }}
     span.badge.badge-assertive
       = badgeCount
 
@@ -35,5 +35,5 @@ template(name='SidebarList')
 
 template(name='SidebarNewList')
   a.item.item-icon-right.sidebar--add-list(data-ion-menu-close href="{{pathFor 'ListCreate'}}" class=selectedClass)
-    | New list
+    | {{_ 'list.newList' }}
     +ionIcon(icon='plus')
