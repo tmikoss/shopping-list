@@ -27,7 +27,7 @@
 }
 
 .sidebar {
-  &--current-user {
+  &--current-user, &--spacer {
     padding-top: 12px;
     padding-bottom: 11px;
 

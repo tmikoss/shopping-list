@@ -2,8 +2,12 @@ isSelected = (path, fallbackClass) ->
   if Session.get('sidebar.selected') is path then 'item-positive' else fallbackClass
 
 Template.SidebarShow.helpers
-  lists: ->
-    SL.Lists.find {}, { sort: { name: 1 } }
+  myLists: ->
+    SL.Lists.find { userId: Meteor.user()?._id }, { sort: { name: 1 } }
+  sharedLists: ->
+    SL.Lists.find { userId: { $ne: Meteor.user()?._id } }, { sort: { name: 1 } }
+  hasSharedLists: ->
+    @sharedLists.count() > 0
 
 Template.SidebarAllItems.helpers
   selectedClass: -> isSelected 'all'

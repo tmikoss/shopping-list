@@ -15,3 +15,4 @@ SL.ListItems.attachSchema new SimpleSchema
 
 if Meteor.server
   SL.ListItems._ensureIndex { doneAt: 1 }, { expireAfterSeconds: 60*60 }
+  SL.ListItems._ensureIndex { listId: 1 }

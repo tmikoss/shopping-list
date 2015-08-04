@@ -8,9 +8,15 @@ template(name='SidebarShow')
           
     +SidebarAllItems
       
-    each lists      
+    each myLists      
       +SidebarList
-          
+    
+    if hasSharedLists
+      .item.item-dark.item-icon-right.sidebar--spacer
+        | Shared by others
+      each sharedLists
+        +SidebarList
+            
     +SidebarNewList
 
 template(name='SidebarAllItems')

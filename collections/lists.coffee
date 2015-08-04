@@ -16,3 +16,7 @@ SL.Lists.attachSchema new SimpleSchema
       type: 'tags'
     optional: true
     regEx: SimpleSchema.RegEx.Email
+
+if Meteor.isServer
+  SL.Lists._ensureIndex { userId: 1 }
+  SL.Lists._ensureIndex { sharedEmails: 1 }
